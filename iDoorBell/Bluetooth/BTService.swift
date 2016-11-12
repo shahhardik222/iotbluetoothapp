@@ -1,17 +1,9 @@
-//
-//  BTService.swift
-//  Arduino_Servo
-//
-//  Created by Owen L Brown on 10/11/14.
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
-//
-
 import Foundation
 import CoreBluetooth
 
 /* Services & Characteristics UUIDs */
-let BLEServiceUUID = CBUUID(string: "025A7775-49AA-42BD-BBDB-E2AE77782966")
-let PositionCharUUID = CBUUID(string: "F38A2C23-BC54-40FC-BED0-60EDDA139F47")
+let BLEServiceUUID = CBUUID(string: "F000AA00-0451-4000-B000-000000000000")
+let PositionCharUUID = CBUUID(string: "F000AA03-0451-4000-B000-000000000000")
 let BLEServiceChangedStatusNotification = "kBLEServiceChangedStatusNotification"
 
 class BTService: NSObject, CBPeripheralDelegate {
@@ -93,15 +85,33 @@ class BTService: NSObject, CBPeripheralDelegate {
   
   // Mark: - Private
   
-  func writePosition(_ position: UInt8) {
     
-    /******** (1) CODE TO BE ADDED *******/
+    func openTheDoor() {
+        
+        let bytes : [UInt8] = [ 0x33, 0x33]
+        let data = NSData(bytes: bytes, length: bytes.count)
+        peripheral?.writeValue(data as Data, for: positionCharacteristic!, type: .withResponse)
+    }
     
-  }
+    func closeTheDoor() {
+
+        let bytes : [UInt8] = [ 0x44, 0x44]
+        let data = NSData(bytes: bytes, length: bytes.count)
+        peripheral?.writeValue(data as Data, for: positionCharacteristic!, type: .withResponse)
+    }
+    
+    
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+        
+        print("%@",characteristic)
+    }
+    
   
   func sendBTServiceNotificationWithIsBluetoothConnected(_ isBluetoothConnected: Bool) {
     let connectionDetails = ["isConnected": isBluetoothConnected]
     NotificationCenter.default.post(name: Notification.Name(rawValue: BLEServiceChangedStatusNotification), object: self, userInfo: connectionDetails)
   }
+    
   
 }
+

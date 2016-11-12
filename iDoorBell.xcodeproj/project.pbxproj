@@ -12,6 +12,9 @@
 		0AED2D8A1DD1819B004E7D12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AED2D881DD1819B004E7D12 /* Main.storyboard */; };
 		0AED2D8C1DD1819B004E7D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AED2D8B1DD1819B004E7D12 /* Assets.xcassets */; };
 		0AED2D8F1DD1819B004E7D12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AED2D8D1DD1819B004E7D12 /* LaunchScreen.storyboard */; };
+		0AED2D971DD186EB004E7D12 /* DoorBellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED2D961DD186EB004E7D12 /* DoorBellCell.swift */; };
+		0AED2D9B1DD188D5004E7D12 /* BTDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED2D991DD188D5004E7D12 /* BTDiscovery.swift */; };
+		0AED2D9C1DD188D5004E7D12 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED2D9A1DD188D5004E7D12 /* BTService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		0AED2D8B1DD1819B004E7D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AED2D8E1DD1819B004E7D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AED2D901DD1819B004E7D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AED2D961DD186EB004E7D12 /* DoorBellCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorBellCell.swift; sourceTree = "<group>"; };
+		0AED2D991DD188D5004E7D12 /* BTDiscovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDiscovery.swift; sourceTree = "<group>"; };
+		0AED2D9A1DD188D5004E7D12 /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		0AED2D831DD1819B004E7D12 /* iDoorBell */ = {
 			isa = PBXGroup;
 			children = (
+				0AED2D981DD188D5004E7D12 /* Bluetooth */,
 				0AED2D841DD1819B004E7D12 /* AppDelegate.swift */,
 				0AED2D861DD1819B004E7D12 /* ViewController.swift */,
+				0AED2D961DD186EB004E7D12 /* DoorBellCell.swift */,
 				0AED2D881DD1819B004E7D12 /* Main.storyboard */,
 				0AED2D8B1DD1819B004E7D12 /* Assets.xcassets */,
 				0AED2D8D1DD1819B004E7D12 /* LaunchScreen.storyboard */,
 				0AED2D901DD1819B004E7D12 /* Info.plist */,
 			);
 			path = iDoorBell;
+			sourceTree = "<group>";
+		};
+		0AED2D981DD188D5004E7D12 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				0AED2D991DD188D5004E7D12 /* BTDiscovery.swift */,
+				0AED2D9A1DD188D5004E7D12 /* BTService.swift */,
+			);
+			path = Bluetooth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +156,9 @@
 			files = (
 				0AED2D871DD1819B004E7D12 /* ViewController.swift in Sources */,
 				0AED2D851DD1819B004E7D12 /* AppDelegate.swift in Sources */,
+				0AED2D9C1DD188D5004E7D12 /* BTService.swift in Sources */,
+				0AED2D9B1DD188D5004E7D12 /* BTDiscovery.swift in Sources */,
+				0AED2D971DD186EB004E7D12 /* DoorBellCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
