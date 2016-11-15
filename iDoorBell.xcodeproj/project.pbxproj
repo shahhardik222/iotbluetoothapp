@@ -322,6 +322,7 @@
 				0AED2D951DD1819B004E7D12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
