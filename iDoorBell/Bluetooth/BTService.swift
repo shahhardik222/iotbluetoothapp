@@ -88,14 +88,14 @@ class BTService: NSObject, CBPeripheralDelegate {
     
     func openTheDoor() {
         
-        let bytes : [UInt8] = [ 0x33, 0x33]
+        let bytes : [UInt8] = [ 0x44, 0x44]
         let data = NSData(bytes: bytes, length: bytes.count)
         peripheral?.writeValue(data as Data, for: positionCharacteristic!, type: .withResponse)
     }
     
     func closeTheDoor() {
 
-        let bytes : [UInt8] = [ 0x44, 0x44]
+        let bytes : [UInt8] = [ 0x33, 0x33]
         let data = NSData(bytes: bytes, length: bytes.count)
         peripheral?.writeValue(data as Data, for: positionCharacteristic!, type: .withResponse)
     }
