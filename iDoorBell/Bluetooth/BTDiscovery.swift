@@ -92,18 +92,10 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     func openTheDoor() {
         self.bleService?.openTheDoor()
-//        let bytes : [UInt8] = [ 0x00, 0x33]
-//        let data = NSData(bytes: bytes, length: bytes.count)
-//        peripheralBLE?.writeValue(data as Data, for: positionCharacteristic!, type: .withResponse)
     }
     
     func closeTheDoor() {
         self.bleService?.closeTheDoor()
-////        let textToSend = ""
-////        let data : Data = textToSend.dataWithHexString(hex: "0x0044")
-//        let bytes : [UInt8] = [ 0x00, 0x44]
-//        let data = NSData(bytes: bytes, length: bytes.count)
-//        peripheralBLE?.writeValue(data as Data, for: positionCharacteristic!, type: .withResponse)
     }
     
     

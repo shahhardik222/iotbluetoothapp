@@ -10,15 +10,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         doorTable.tableFooterView = UIView()
+        
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+     
         // Watch Bluetooth connection
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
         
         // Start the Bluetooth discovery process
         _ = btDiscoverySharedInstance
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
     }
     
     
